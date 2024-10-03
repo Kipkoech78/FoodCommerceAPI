@@ -46,6 +46,7 @@ app.use('/api/v1/students', studentrout)
 app.use('/api/v1/mexico', studentrout)
 app.post('/register', controller.regUser );
 app.post('/v1/login' ,  controller.loginUser );
+app.get('/food', controller.food_items);
 app.get('/isUserAuth',verifyJWT, controller.isuserAuth);
 
 

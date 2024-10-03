@@ -7,7 +7,8 @@ const addCustomer = "INSERT INTO customers (customer_name, contact_name, address
 
 const addUser = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
 const CheckEmailExist = "select * from users WHERE email = $1";
+const getFood = "select * from food_items";
 
 module.exports ={
-    getAllCustomers,mexicoCustomers,getCustId,checkContactExist,addCustomer,addUser,CheckEmailExist,
+    getAllCustomers,mexicoCustomers,getCustId,checkContactExist,addCustomer,addUser,CheckEmailExist,getFood
 }

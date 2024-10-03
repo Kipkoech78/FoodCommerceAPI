@@ -64,7 +64,6 @@ const regUser =((req, res)=>{
                 
                 return res.send("email already Exist!")
             }
-          
             return pool.query(queries.addUser, [name, email, hash]).then((response)=>{
                 res.set('Access-Control-Allow-Origin', '*');
                 res.status(201).send("User Registered Successfully")
@@ -112,11 +111,17 @@ const loginUser = ((req, res)=>{
     }).catch((err)=> console.log(err));
 });
 
-const travels = ((req,res)=>{
+const food_items = ((req,res)=>{
+    pool.query(queries.getFood)
+    .then((response)=>{
+        res.status(200).json(response.rows)
+        
+    }).catch((err)=>{
+        console.log(err)
+    })
+
     //TODO: add query
 })
-
-
 module.exports = {
-    getStudents,getmexCustomers,getcustomerById,postCustomer,regUser,loginUser,isuserAuth
+    getStudents,getmexCustomers,getcustomerById,postCustomer,regUser,loginUser,isuserAuth,food_items
 }
